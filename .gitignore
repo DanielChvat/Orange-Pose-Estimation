@@ -1,5 +1,11 @@
-**/__pycache__/**
+**/__pycache__/
+**/*.pyc
+**/*.pyo
 out/*
+!out/README.md
 raw_videos/*
+!raw_videos/README.md
 vis/*
+!vis/README.md
+!vis/videos
 checkpoints/*
