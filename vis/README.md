@@ -1,5 +1,4 @@
-# Visualisation outputs from scripts in `util` run on pipeline results.
+# Visualisation outputs from scripts in `util`.
 
-- `masks/` — side-by-side images of original frame and SAM mask (output of `vis.py`)
-- `depths/` — triple images of original frame, SAM mask, and depthmap (output of `vis.py`)
-- `videos/` — rendered `.mp4` combining all frames into a single visualisation video
+- `videos/3d_vis.mp4` — full scene and segmented point cloud rendered from Open3D keyframes
+- `videos/projected_vis.mp4` — original frames beside projected segmented points on black

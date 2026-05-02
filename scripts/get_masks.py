@@ -7,6 +7,7 @@ from PIL import Image
 from tqdm import tqdm
 from sam3.model_builder import build_sam3_image_model
 from sam3.model.sam3_image_processor import Sam3Processor
+import shutil
 
 
 def parse_args():
@@ -99,8 +100,13 @@ def main():
     args = parse_args()
 
     video_path = os.path.expanduser(args.video_path)
-    os.makedirs(args.frame_dir, exist_ok=True)
-    os.makedirs(args.mask_dir, exist_ok=True)
+
+    if os.path.exists(args.frame_dir):
+        shutil.rmtree(args.frame_dir)
+    if os.path.exists(args.mask_dir):
+        shutil.rmtree(args.mask_dir)
+    os.makedirs(args.frame_dir)
+    os.makedirs(args.mask_dir)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = build_sam3_image_model().to(device).eval()
