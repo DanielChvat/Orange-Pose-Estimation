@@ -1,6 +1,9 @@
-[submodule "dust3r"]
-	path = dust3r
-	url = https://github.com/naver/dust3r.git
 [submodule "sam3"]
 	path = sam3
 	url = https://github.com/facebookresearch/sam3.git
+[submodule "third_party/gaussian-splatting"]
+	path = third_party/gaussian-splatting
+	url = https://github.com/graphdeco-inria/gaussian-splatting.git
+[submodule "third_party/speedy-splat"]
+	path = third_party/speedy-splat
+	url = https://github.com/j-alex-hanson/speedy-splat.git
