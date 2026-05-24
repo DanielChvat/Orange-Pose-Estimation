@@ -1,0 +1,66 @@
+# Exclude large pipeline outputs / inputs that should be volume-mounted at run
+# time, not baked into the image. (Anything you want at runtime, mount with
+# -v "$(pwd)/out":/workspace/out etc., or use docker/run.sh which does it.)
+
+out/
+vis/
+raw_videos/
+logs/
+checkpoints/
+
+# VCS noise
+.git/
+.gitignore
+**/.git
+**/.gitignore
+**/.gitmodules
+
+# Python caches
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.ipynb_checkpoints/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+**/build/
+**/dist/
+**/*.egg-info/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Dataset / model weights pulled at runtime
+**/checkpoints/
+**/weights/
+**/*.safetensors
+**/*.pt
+**/*.pth
+
+# Submodule heavy data dirs (rarely needed inside the image, mount if so)
+sam3/assets/videos/
+sam3/assets/images/
+sam3/test/
+sam3/examples/
+third_party/speedy-splat/output/
+
+# Datasets we don't bake into the image (mount via docker/run.sh if needed)
+data/
+
+# Docker itself
+docker/build_cache/
+
+# Local sandbox
+out_*/
+scratch/
+tmp/
